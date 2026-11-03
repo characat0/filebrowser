@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "Elérhető a frissítés!",
     "fileActions": "Fájl műveletek",
+    "recentlyOpened": "Legutóbb megnyitott",
+    "recentlyOpenedEmpty": "Az általad megnyitott fájlok itt jelennek meg.",
+    "recentFiles": "Legutóbbi fájlok",
+    "recentFilesDescription": "Az oldalsávban napok szerint csoportosítva mutatja a legutóbb megnyitott fájlokat.",
+    "recentFilesCount": "Fájlok száma",
+    "recentFilesNewTab": "Fájlok megnyitása új lapon",
+    "recentFilesNewTabDescription": "A fájlra kattintva az új böngészőlapon nyílik meg ehelyett.",
     "customizeLinks": "Oldalsávos hivatkozások testreszabása",
     "customizeLinksDescription": "Az oldalsávban megjelenő linkek testreszabása. Húzza és ejtse át a sorrend átrendezéséhez.",
     "currentLinks": "Jelenlegi linkek",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Hozzáférési tevékenység",
       "eventAccessCreate": "Hozzáférés létrehozása",
       "eventAccessDelete": "Hozzáférés törlés",
-      "eventFileModify": "Fájl módosítása"
+      "eventFileModify": "Fájl módosítása",
+      "eventFileOpen": "Fájl megnyitása"
     },
     "toolAccessDefaults": "Az eszközökhöz való hozzáférés alapértelmezett beállításai",
     "toolAccessDefaultsDescription": "Állítsa be, hogy az új felhasználók alapértelmezés szerint mely eszközökhöz férhessenek hozzá",

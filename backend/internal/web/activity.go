@@ -5,8 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
+	"time"
 
 	"github.com/gtsteffaniak/filebrowser/backend/internal/activity"
+	"github.com/gtsteffaniak/filebrowser/backend/internal/adapters/fs/files"
 	activitydb "github.com/gtsteffaniak/filebrowser/backend/internal/database/activity"
 	"github.com/gtsteffaniak/filebrowser/backend/internal/state"
 	"github.com/gtsteffaniak/filebrowser/backend/internal/utils"
@@ -128,4 +131,68 @@ func mustJSON(v any) []byte {
 		return []byte("{}")
 	}
 	return b
+}
+
+// recentFile is one entry of the recently opened files list.
+type recentFile struct {
+	Source   string    `json:"source"`
+	Path     string    `json:"path"`
+	Name     string    `json:"name"`
+	Type     string    `json:"type"`
+	Size     int64     `json:"size"`
+	Modified time.Time `json:"modified"`
+	OpenedAt int64     `json:"openedAt"`
+}
+
+// recentFilesHandler returns the files the current user opened most recently
+// (from fileOpen activity), newest first, one entry per file. Files that were
+// deleted or moved, or that the user can no longer see, are left out. The
+// optional limit query parameter defaults to 10 and is capped at 50.
+func recentFilesHandler(w http.ResponseWriter, r *http.Request, d *Context) (int, error) {
+	limit := 10
+	if v, err := strconv.Atoi(r.URL.Query().Get("limit")); err == nil {
+		limit = utils.Clamp(v, 1, 50)
+	}
+	items, _, err := state.ListActivity(activitydb.QueryFilter{
+		UserID:     d.User.ID,
+		UserFilter: true,
+		EventTypes: []activitydb.EventType{activitydb.EventFileOpen},
+		Page:       1,
+		Limit:      500,
+	})
+	if err != nil {
+		return http.StatusInternalServerError, err
+	}
+	seen := make(map[string]struct{}, limit)
+	out := make([]recentFile, 0, limit)
+	for _, item := range items {
+		key := item.Source + "\x00" + item.Path
+		if _, ok := seen[key]; ok {
+			continue
+		}
+		seen[key] = struct{}{}
+		info, err := files.FileInfoFaster(utils.FileOptions{
+			Path:              item.Path,
+			Source:            item.Source,
+			FollowSymlinks:    true,
+			ShowHidden:        d.User.ShowHidden,
+			SkipExtendedAttrs: true,
+		}, d.User)
+		if err != nil || info.IsDir || info.Type == "directory" {
+			continue
+		}
+		out = append(out, recentFile{
+			Source:   item.Source,
+			Path:     item.Path,
+			Name:     info.Name,
+			Type:     info.Type,
+			Size:     info.Size,
+			Modified: info.ModTime,
+			OpenedAt: item.CreatedAt,
+		})
+		if len(out) == limit {
+			break
+		}
+	}
+	return RenderJSON(w, r, out)
 }

@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "Er is een update beschikbaar!",
     "fileActions": "Bestandsacties",
+    "recentlyOpened": "Recent geopend",
+    "recentlyOpenedEmpty": "Bestanden die je opent, verschijnen hier.",
+    "recentFiles": "Recente bestanden",
+    "recentFilesDescription": "Toont de bestanden die je onlangs opende, gegroepeerd per dag, rechtstreeks in de zijbalk.",
+    "recentFilesCount": "Aantal bestanden",
+    "recentFilesNewTab": "Bestanden in een nieuw tabblad openen",
+    "recentFilesNewTabDescription": "Klikken op een bestand opent het in een nieuw browsertabblad in plaats van in dit tabblad.",
     "customizeLinks": "Zijbalk koppelingen aanpassen",
     "customizeLinksDescription": "Pas de links in je zijbalk aan. Slepen en neerzetten om te herschikken.",
     "currentLinks": "Huidige koppelingen",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Toegangsactiviteit",
       "eventAccessCreate": "Toegang aanmaken",
       "eventAccessDelete": "Toegang verwijderen",
-      "eventFileModify": "Bestand wijzigen"
+      "eventFileModify": "Bestand wijzigen",
+      "eventFileOpen": "Bestand geopend"
     },
     "toolAccessDefaults": "Standaardinstellingen voor toegang tot gereedschappen",
     "toolAccessDefaultsDescription": "Stel in tot welke tools nieuwe gebruikers standaard toegang hebben",

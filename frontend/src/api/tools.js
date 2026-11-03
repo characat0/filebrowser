@@ -217,6 +217,11 @@ export async function activityGrouped(options = {}) {
   return fetchJSON(getApiPath("tools/activity/grouped", buildActivityParams(options)));
 }
 
+// GET /api/activity/recent — the current user's recently opened files
+export async function recentFiles(limit = 15) {
+  return fetchJSON(getApiPath("activity/recent", { limit: String(limit) }));
+}
+
 // GET /api/tools/activity/export — returns URL for download
 export function activityExportUrl(options = {}) {
   return getApiPath("tools/activity/export", buildActivityParams(options));

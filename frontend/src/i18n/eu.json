@@ -702,6 +702,13 @@
     "dividerNamePlaceholder": "Bereizlearen testua (utzi hutsik lerro bat erakusteko)",
     "updateIsAvailable": "Eguneratze bat dago erabilgarri!",
     "fileActions": "Fitxategi-ekintzak",
+    "recentlyOpened": "Azkenaldian irekiak",
+    "recentlyOpenedEmpty": "Irekitzen dituzun fitxategiak hemen agertuko dira.",
+    "recentFiles": "Azken fitxategiak",
+    "recentFilesDescription": "Azkenaldian ireki dituzun fitxategiak egunka multzokatuta erakusten ditu alboko barran.",
+    "recentFilesCount": "Fitxategi kopurua",
+    "recentFilesNewTab": "Ireki fitxategiak fitxa berri batean",
+    "recentFilesNewTabDescription": "Fitxategi batean klik eginez gero, nabigatzailearen fitxa berri batean irekiko da, hau erabili beharrean.",
     "switchMode": "Txandakatu estekak eta nabigazio-zuhaitza",
     "customizeLinks": "Pertsonalizatu alboko barrako estekak",
     "customizeLinksDescription": "Pertsonalizatu alboko barran erakusten diren estekak. Arrastatu eta jaregin ordena aldatzeko.",
@@ -1126,7 +1133,8 @@
       "pathGlob": "Bide-eredua (glob)",
       "viewActivity": "Ikusi jarduera",
       "tableColumns": "Taularen zutabeak",
-      "eventFileModify": "Fitxategia aldatu"
+      "eventFileModify": "Fitxategia aldatu",
+      "eventFileOpen": "Fitxategia ireki"
     },
     "toolNotFound": "Ez da tresna aurkitu"
   },

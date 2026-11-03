@@ -45,6 +45,8 @@
               <hr v-if="!link.name || link.name.toLowerCase() === 'divider'" class="sidebar-divider" />
               <span v-else class="sidebar-divider-text">{{ link.name }}</span>
             </div>
+            <!-- Recently opened files, listed inline where the link is placed -->
+            <SidebarRecentFiles v-else-if="link.category === 'recent' && !isShare" :link="link" />
             <!-- Source Location custom link -->
             <a v-else-if="link.category === 'custom' && link.name === 'sourceLocation'" :href="link.target"
               :aria-label="link.name" class="action button sidebar-link-button" @click.prevent="handleLinkClick(link)">
@@ -179,6 +181,7 @@ import ShareInfo from "@/components/files/ShareInfo.vue";
 import FileTree from '@/components/files/FileTree.vue';
 import ExpandDropdown from "@/components/settings/ExpandDropdown.vue";
 import ToggleSwitch from "@/components/settings/ToggleSwitch.vue";
+import SidebarRecentFiles from "./RecentFiles.vue";
 export default {
   name: "SidebarLinks",
   components: {
@@ -188,6 +191,7 @@ export default {
     FileTree,
     ExpandDropdown,
     ToggleSwitch,
+    SidebarRecentFiles,
   },
   data() {
     return {

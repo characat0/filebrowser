@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "Aktualizacja jest już dostępna!",
     "fileActions": "Działania na plikach",
+    "recentlyOpened": "Ostatnio otwierane",
+    "recentlyOpenedEmpty": "Tutaj pojawią się otwierane przez Ciebie pliki.",
+    "recentFiles": "Ostatnie pliki",
+    "recentFilesDescription": "Pokazuje ostatnio otwierane pliki, pogrupowane według dni, bezpośrednio na pasku bocznym.",
+    "recentFilesCount": "Liczba plików",
+    "recentFilesNewTab": "Otwieraj pliki w nowej karcie",
+    "recentFilesNewTabDescription": "Kliknięcie pliku otwiera go w nowej karcie przeglądarki zamiast w tej.",
     "customizeLinks": "Dostosowywanie linków paska bocznego",
     "customizeLinksDescription": "Dostosuj linki wyświetlane na pasku bocznym. Przeciągnij i upuść, aby zmienić kolejność.",
     "currentLinks": "Aktualne linki",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Działania związane z dostępem",
       "eventAccessCreate": "Dostęp do tworzenia",
       "eventAccessDelete": "Dostęp – usunięcie",
-      "eventFileModify": "Modyfikacja pliku"
+      "eventFileModify": "Modyfikacja pliku",
+      "eventFileOpen": "Otwarcie pliku"
     },
     "toolAccessDefaults": "Domyślne ustawienia dostępu do narzędzi",
     "toolAccessDefaultsDescription": "Skonfiguruj, do których narzędzi nowi użytkownicy będą mieli domyślny dostęp",

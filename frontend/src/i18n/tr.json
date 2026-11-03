@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "Bir güncelleme mevcut!",
     "fileActions": "Dosya işlemleri",
+    "recentlyOpened": "Son açılanlar",
+    "recentlyOpenedEmpty": "Açtığınız dosyalar burada görünecek.",
+    "recentFiles": "Son dosyalar",
+    "recentFilesDescription": "Son açtığınız dosyaları güne göre gruplandırarak doğrudan kenar çubuğunda gösterir.",
+    "recentFilesCount": "Dosya sayısı",
+    "recentFilesNewTab": "Dosyaları yeni sekmede aç",
+    "recentFilesNewTabDescription": "Bir dosyaya tıklamak onu bu sekme yerine yeni bir tarayıcı sekmesinde açar.",
     "customizeLinks": "Kenar Çubuğu Bağlantılarını Özelleştir",
     "customizeLinksDescription": "Kenar çubuğunuzda gösterilen bağlantıları özelleştirin. Yeniden sıralamak için sürükleyip bırakın.",
     "currentLinks": "Güncel Bağlantılar",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Erişim etkinliği",
       "eventAccessCreate": "Erişim oluştur",
       "eventAccessDelete": "Erişim silme",
-      "eventFileModify": "Dosya düzenleme"
+      "eventFileModify": "Dosya düzenleme",
+      "eventFileOpen": "Dosya açma"
     },
     "toolAccessDefaults": "Araç erişim varsayılan ayarları",
     "toolAccessDefaultsDescription": "Yeni kullanıcıların varsayılan olarak hangi araçlara erişebileceğini ayarlayın",

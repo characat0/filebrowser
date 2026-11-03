@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "עדכון זמין!",
     "fileActions": "פעולות קובץ",
+    "recentlyOpened": "נפתחו לאחרונה",
+    "recentlyOpenedEmpty": "קבצים שתפתח יופיעו כאן.",
+    "recentFiles": "קבצים אחרונים",
+    "recentFilesDescription": "מציג את הקבצים שפתחת לאחרונה, מקובצים לפי יום, ישירות בסרגל הצד.",
+    "recentFilesCount": "מספר קבצים",
+    "recentFilesNewTab": "פתח קבצים בכרטיסייה חדשה",
+    "recentFilesNewTabDescription": "לחיצה על קובץ פותחת אותו בכרטיסייה חדשה בדפדפן במקום בזו.",
     "customizeLinks": "התאמה אישית של קישורי סרגל הצד",
     "customizeLinksDescription": "התאם אישית את הקישורים המוצגים בסרגל הצדדי. גרור ושחרר כדי לשנות את הסדר.",
     "currentLinks": "קישורים נוכחיים",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "פעילות גישה",
       "eventAccessCreate": "גישה ליצירה",
       "eventAccessDelete": "גישה ומחיקה",
-      "eventFileModify": "שינוי קובץ"
+      "eventFileModify": "שינוי קובץ",
+      "eventFileOpen": "פתיחת קובץ"
     },
     "toolAccessDefaults": "הגדרות ברירת מחדל לגישה לכלים",
     "toolAccessDefaultsDescription": "הגדר לאילו כלים יוכלו משתמשים חדשים לגשת כברירת מחדל",

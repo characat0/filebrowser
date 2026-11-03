@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "En uppdatering är tillgänglig!",
     "fileActions": "Filåtgärder",
+    "recentlyOpened": "Nyligen öppnade",
+    "recentlyOpenedEmpty": "Filer som du öppnar visas här.",
+    "recentFiles": "Senaste filer",
+    "recentFilesDescription": "Visar de filer du har öppnat nyligen, grupperade per dag, direkt i sidofältet.",
+    "recentFilesCount": "Antal filer",
+    "recentFilesNewTab": "Öppna filer i en ny flik",
+    "recentFilesNewTabDescription": "Ett klick på en fil öppnar den i en ny webbläsarflik i stället för den här.",
     "customizeLinks": "Anpassa länkar i sidofältet",
     "customizeLinksDescription": "Anpassa länkarna som visas i sidofältet. Dra och släpp för att ändra ordning.",
     "currentLinks": "Aktuella länkar",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Åtkomstaktivitet",
       "eventAccessCreate": "Öppna skapa",
       "eventAccessDelete": "Åtkomst radera",
-      "eventFileModify": "Ändra fil"
+      "eventFileModify": "Ändra fil",
+      "eventFileOpen": "Fil öppnad"
     },
     "toolAccessDefaults": "Standardinställningar för verktygsåtkomst",
     "toolAccessDefaultsDescription": "Ställ in vilka verktyg nya användare ska ha tillgång till som standard",

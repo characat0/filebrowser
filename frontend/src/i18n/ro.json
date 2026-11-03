@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "O actualizare este disponibilă!",
     "fileActions": "Acțiuni de fișier",
+    "recentlyOpened": "Deschise recent",
+    "recentlyOpenedEmpty": "Fișierele pe care le deschizi vor apărea aici.",
+    "recentFiles": "Fișiere recente",
+    "recentFilesDescription": "Afișează fișierele deschise recent, grupate pe zile, direct în bara laterală.",
+    "recentFilesCount": "Număr de fișiere",
+    "recentFilesNewTab": "Deschide fișierele într-o filă nouă",
+    "recentFilesNewTabDescription": "Un clic pe un fișier îl deschide într-o filă nouă a browserului în loc de aceasta.",
     "customizeLinks": "Personalizarea linkurilor din bara laterală",
     "customizeLinksDescription": "Personalizați legăturile afișate în bara dvs. laterală. Glisați și fixați pentru a le reordona.",
     "currentLinks": "Legături actuale",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Activitatea de acces",
       "eventAccessCreate": "Accesare și creare",
       "eventAccessDelete": "Accesare Ștergere",
-      "eventFileModify": "Modificare fișier"
+      "eventFileModify": "Modificare fișier",
+      "eventFileOpen": "Deschidere fișier"
     },
     "toolAccessDefaults": "Setările implicite privind accesul la instrumente",
     "toolAccessDefaultsDescription": "Configurați instrumentele la care noii utilizatori au acces în mod implicit",

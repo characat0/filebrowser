@@ -338,6 +338,13 @@
   "sidebar": {
     "updateIsAvailable": "Доступне оновлення!",
     "fileActions": "Дії з файлами",
+    "recentlyOpened": "Нещодавно відкриті",
+    "recentlyOpenedEmpty": "Тут з'являтимуться файли, які ви відкриваєте.",
+    "recentFiles": "Нещодавні файли",
+    "recentFilesDescription": "Показує нещодавно відкриті файли, згруповані за днями, просто на бічній панелі.",
+    "recentFilesCount": "Кількість файлів",
+    "recentFilesNewTab": "Відкривати файли в новій вкладці",
+    "recentFilesNewTabDescription": "Натискання на файл відкриває його в новій вкладці браузера замість цієї.",
     "customizeLinks": "Налаштувати посилання на бічній панелі",
     "customizeLinksDescription": "Налаштуйте посилання, що відображаються на бічній панелі. Перетягніть, щоб змінити порядок.",
     "currentLinks": "Поточні посилання",
@@ -1083,7 +1090,8 @@
       "scopeAccess": "Активність доступу",
       "eventAccessCreate": "Доступ до створення",
       "eventAccessDelete": "Доступ до видалення",
-      "eventFileModify": "Зміна файлу"
+      "eventFileModify": "Зміна файлу",
+      "eventFileOpen": "Відкриття файлу"
     },
     "toolAccessDefaults": "Стандартні налаштування доступу до інструментів",
     "toolAccessDefaultsDescription": "Налаштуйте, до яких інструментів нові користувачі матимуть доступ за замовчуванням",

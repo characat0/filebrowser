@@ -15,6 +15,8 @@ export function activityEventLabel(eventType, $t) {
       return $t("general.upload");
     case "fileModify":
       return $t("tools.activityViewer.eventFileModify");
+    case "fileOpen":
+      return $t("tools.activityViewer.eventFileOpen");
     case "delete":
       return $t("general.delete");
     case "login":
