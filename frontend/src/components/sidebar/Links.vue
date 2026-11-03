@@ -45,6 +45,8 @@
               <hr v-if="!link.name || link.name.toLowerCase() === 'divider'" class="sidebar-divider" />
               <span v-else class="sidebar-divider-text">{{ link.name }}</span>
             </div>
+            <!-- Recently opened files, listed inline where the link is placed -->
+            <SidebarRecentFiles v-else-if="link.category === 'recent' && !isShare" :link="link" />
             <!-- Source Location custom link -->
             <a v-else-if="link.category === 'custom' && link.name === 'sourceLocation'" :href="link.target"
               :aria-label="link.name" class="action button sidebar-link-button" @click.prevent="handleLinkClick(link)">
@@ -128,7 +130,6 @@
             </a>
           </template>
         </transition-group>
-        <SidebarRecentFiles v-if="showRecentFiles" />
       </template>
       <!-- Navigation Mode -->
       <template v-else>
@@ -206,9 +207,6 @@ export default {
     },
     canEdit() {
       return state.shareInfo?.canEditShare || false;
-    },
-    showRecentFiles() {
-      return !this.isShare && getters.isLoggedIn() && state.user?.username !== "anonymous";
     },
     isLoggedIn() {
       return getters.isLoggedIn();

@@ -262,6 +262,28 @@
           <p>{{ $t('share.downloadDescription') }}</p>
         </div>
 
+        <!-- Recently opened files - list shown inline in the sidebar -->
+        <div v-if="newLink.category === 'recent'" class="form-group">
+          <p>{{ $t('sidebar.recentFilesDescription') }}</p>
+          <p>{{ $t('sidebar.linkName') }}</p>
+          <input aria-label="Link Name" v-model="newLink.name" type="text" class="input"
+            :placeholder="$t('sidebar.recentlyOpened')" />
+          <p>{{ $t('sidebar.recentFilesCount') }}</p>
+          <ExpandDropdown
+            :model-value="recentOptions.limit"
+            :options="recentLimitOptions"
+            :aria-label="$t('sidebar.recentFilesCount')"
+            @update:model-value="updateRecentOptions({ limit: $event })"
+          />
+          <div class="settings-items" style="margin-top: 0.5em;">
+            <ToggleSwitch class="item"
+              :modelValue="recentOptions.newTab"
+              @update:modelValue="updateRecentOptions({ newTab: $event })"
+              :name="$t('sidebar.recentFilesNewTab')"
+              :description="$t('sidebar.recentFilesNewTabDescription')" />
+          </div>
+        </div>
+
         <!-- Divider - special visual separator -->
         <div v-if="newLink.category === 'divider'" class="form-group">
           <p>{{ $t('sidebar.linkName') }}</p>
@@ -430,6 +452,12 @@ import ToggleSwitch from "@/components/settings/ToggleSwitch.vue";
 import ExpandDropdown from "@/components/settings/ExpandDropdown.vue";
 import YamlEditorPanel from "@/components/prompts/YamlEditorPanel.vue";
 import { sidebarLinkKey } from "@/utils/sidebarLinkKeys.js";
+import {
+  buildRecentTarget,
+  parseRecentTarget,
+  RECENT_DEFAULT_ICON,
+  RECENT_LIMIT_OPTIONS,
+} from "@/utils/recentFiles.js";
 import { createDragReorder } from "@/utils/dragAndDropReorder.js";
 import { CORE_SCHEMA, dump, load, mergeTag } from "js-yaml";
 import {
@@ -569,7 +597,8 @@ export default {
       // Special link types that don't need additional validation
       if (this.newLink.category === "shareInfo" ||
           this.newLink.category === "download" ||
-          this.newLink.category === "divider") {
+          this.newLink.category === "divider" ||
+          this.newLink.category === "recent") {
         return true;
       }
 
@@ -625,6 +654,7 @@ export default {
       }
       if (this.context === "user") {
         options.push({ value: "tool", label: this.$t("general.tool") });
+        options.push({ value: "recent", label: this.$t("sidebar.recentFiles") });
       }
       options.push(
         { value: "custom", label: this.$t("sidebar.customLink") },
@@ -655,6 +685,12 @@ export default {
         value: tool.path,
         label: this.$t(tool.name),
       }));
+    },
+    recentOptions() {
+      return parseRecentTarget(this.newLink.target);
+    },
+    recentLimitOptions() {
+      return RECENT_LIMIT_OPTIONS.map((n) => ({ value: n, label: String(n) }));
     },
     usageTextModeOptions() {
       return [
@@ -1002,6 +1038,9 @@ export default {
       }
       this.newLink.category = withRootOnlySuffix(category, this.rootFilesystemOnly);
     },
+    updateRecentOptions(changes) {
+      this.newLink.target = buildRecentTarget({ ...this.recentOptions, ...changes });
+    },
     updateUsageTextMode(mode) {
       const category = mode === "disk" ? 'source-hybrid-2' : 'source-hybrid';
       this.newLink.category = withRootOnlySuffix(category, this.rootFilesystemOnly);
@@ -1029,6 +1068,8 @@ export default {
           return this.$t('general.download');
         case 'divider':
           return this.$t('general.divider');
+        case 'recent':
+          return this.$t('sidebar.recentFiles');
         default:
           return category;
       }
@@ -1037,6 +1078,9 @@ export default {
       // For dividers, show the name or a default
       if (link.category === 'divider') {
         return link.name || this.$t('general.divider');
+      }
+      if (link.category === 'recent' && !link.name) {
+        return this.$t('sidebar.recentlyOpened');
       }
 
       // Check if the name looks like a translation key that needs translating
@@ -1083,6 +1127,9 @@ export default {
         } else if (value === "download") {
           this.newLink.name = this.$t("general.download");
           this.newLink.icon = "download";
+        } else if (value === "recent") {
+          this.newLink.target = buildRecentTarget();
+          this.newLink.icon = RECENT_DEFAULT_ICON;
         }
       }
       if (value === "share") {
@@ -1233,6 +1280,9 @@ export default {
         linkData.target = "#";
         linkData.name = this.newLink.name || ""; // Keep the custom name if provided
         linkData.icon = ""; // Dividers don't need an icon
+      } else if (this.newLink.category === "recent") {
+        linkData.target = buildRecentTarget(parseRecentTarget(this.newLink.target));
+        linkData.icon = this.newLink.icon || RECENT_DEFAULT_ICON;
       } else if (this.newLink.category === "custom") {
         linkData.target = this.processCustomUrl(this.newLink.target);
       } else if (this.isSourceCategory(this.newLink.category)) {

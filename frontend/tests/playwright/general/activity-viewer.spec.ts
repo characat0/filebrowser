@@ -112,3 +112,35 @@ test("activity viewer tool page loads", async ({ page, checkForErrors }) => {
   await expect(page.locator(".topTitle")).toContainText(/Activity Viewer/i);
   await checkForErrors();
 });
+
+test.describe("Recently opened files", () => {
+  test("opening a file logs fileOpen and lists it in recent files", async ({ page }) => {
+    const source = "playwright + files";
+    const path = "/myfolder/testdata/gray-sample.jpg";
+    const params = new URLSearchParams({ source, path });
+    const opened = await page.request.get(`http://127.0.0.1/api/resources?${params}`);
+    expect(opened.ok()).toBeTruthy();
+
+    // Activity rows are flushed in batches, so wait for the entry to land.
+    await expect
+      .poll(
+        async () => {
+          const response = await page.request.get("http://127.0.0.1/api/activity/recent?limit=5");
+          if (!response.ok()) {
+            return null;
+          }
+          const files = await response.json();
+          return files.find((f) => f.source === source && f.path === path) ?? null;
+        },
+        { timeout: 30000, intervals: [1000] },
+      )
+      .toMatchObject({ name: "gray-sample.jpg", type: "image/jpeg" });
+
+    const activity = await page.request.get(
+      "http://127.0.0.1/api/tools/activity?from=0&to=9999999999&eventType=fileOpen",
+    );
+    expect(activity.ok()).toBeTruthy();
+    const body = await activity.json();
+    expect(body.items.some((item) => item.path === path)).toBe(true);
+  });
+});

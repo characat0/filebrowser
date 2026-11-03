@@ -19,6 +19,8 @@ const (
 	SidebarLinkSourceHybrid2Root SidebarLinkCategory = "source-hybrid-2-root"
 	SidebarLinkTool              SidebarLinkCategory = "tool"
 	SidebarLinkCustom            SidebarLinkCategory = "custom"
+	// SidebarLinkRecent shows the user's recently opened files inline in the sidebar.
+	SidebarLinkRecent SidebarLinkCategory = "recent"
 )
 
 // NormalizeSidebarLinkCategory returns a known category string, preserving source-* variants.
@@ -32,7 +34,7 @@ func NormalizeSidebarLinkCategory(category string) string {
 		SidebarLinkSourceHybrid, SidebarLinkSourceHybrid2,
 		SidebarLinkSourceRoot, SidebarLinkSourceAltRoot,
 		SidebarLinkSourceHybridRoot, SidebarLinkSourceHybrid2Root,
-		SidebarLinkTool, SidebarLinkCustom:
+		SidebarLinkTool, SidebarLinkCustom, SidebarLinkRecent:
 		return c
 	}
 	if strings.HasPrefix(c, "source") {
