@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "עדכון זמין!",
     "fileActions": "פעולות קובץ",
+    "recentlyOpened": "נפתחו לאחרונה",
+    "recentlyOpenedEmpty": "קבצים שתפתח יופיעו כאן.",
     "customizeLinks": "התאמה אישית של קישורי סרגל הצד",
     "customizeLinksDescription": "התאם אישית את הקישורים המוצגים בסרגל הצדדי. גרור ושחרר כדי לשנות את הסדר.",
     "currentLinks": "קישורים נוכחיים",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "פעילות גישה",
       "eventAccessCreate": "גישה ליצירה",
       "eventAccessDelete": "גישה ומחיקה",
-      "eventFileModify": "שינוי קובץ"
+      "eventFileModify": "שינוי קובץ",
+      "eventFileOpen": "פתיחת קובץ"
     },
     "toolAccessDefaults": "הגדרות ברירת מחדל לגישה לכלים",
     "toolAccessDefaultsDescription": "הגדר לאילו כלים יוכלו משתמשים חדשים לגשת כברירת מחדל",

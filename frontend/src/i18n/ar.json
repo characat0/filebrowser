@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "يتوفر تحديث!",
     "fileActions": "إجراءات الملف",
+    "recentlyOpened": "المفتوحة مؤخرًا",
+    "recentlyOpenedEmpty": "ستظهر هنا الملفات التي تفتحها.",
     "customizeLinks": "تخصيص روابط الشريط الجانبي",
     "customizeLinksDescription": "خصص الروابط المعروضة في الشريط الجانبي. السحب والإفلات لإعادة الترتيب.",
     "currentLinks": "الروابط الحالية",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "الوصول إلى النشاط",
       "eventAccessCreate": "الوصول إلى \"إنشاء\"",
       "eventAccessDelete": "الوصول والحذف",
-      "eventFileModify": "تعديل الملف"
+      "eventFileModify": "تعديل الملف",
+      "eventFileOpen": "فتح ملف"
     },
     "toolAccessDefaults": "الإعدادات الافتراضية للوصول إلى الأدوات",
     "toolAccessDefaultsDescription": "تحديد الأدوات التي يمكن للمستخدمين الجدد الوصول إليها بشكل افتراضي",

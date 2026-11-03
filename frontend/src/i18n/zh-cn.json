@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "有了最新进展！",
     "fileActions": "文件操作",
+    "recentlyOpened": "最近打开",
+    "recentlyOpenedEmpty": "你打开的文件会显示在这里。",
     "customizeLinks": "自定义侧边栏链接",
     "customizeLinksDescription": "自定义侧边栏中显示的链接。拖放即可重新排序。",
     "currentLinks": "当前链接",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "访问活动",
       "eventAccessCreate": "访问 创建",
       "eventAccessDelete": "访问 删除",
-      "eventFileModify": "文件修改"
+      "eventFileModify": "文件修改",
+      "eventFileOpen": "打开文件"
     },
     "toolAccessDefaults": "工具访问默认设置",
     "toolAccessDefaultsDescription": "配置新用户默认可以访问的工具",

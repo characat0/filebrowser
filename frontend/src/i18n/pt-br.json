@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "Uma atualização está disponível!",
     "fileActions": "Ações de arquivo",
+    "recentlyOpened": "Abertos recentemente",
+    "recentlyOpenedEmpty": "Os arquivos que você abrir aparecerão aqui.",
     "customizeLinks": "Personalizar links da barra lateral",
     "customizeLinksDescription": "Personalize os links exibidos em sua barra lateral. Arraste e solte para reordenar.",
     "currentLinks": "Links atuais",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Atividade de acesso",
       "eventAccessCreate": "Acessar criar",
       "eventAccessDelete": "Acessar/Excluir",
-      "eventFileModify": "Modificação de arquivo"
+      "eventFileModify": "Modificação de arquivo",
+      "eventFileOpen": "Abertura de arquivo"
     },
     "toolAccessDefaults": "Configurações padrão de acesso às ferramentas",
     "toolAccessDefaultsDescription": "Configure quais ferramentas os novos usuários podem acessar por padrão",

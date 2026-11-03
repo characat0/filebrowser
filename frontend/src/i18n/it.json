@@ -671,6 +671,8 @@
     "dividerNamePlaceholder": "Testo divisore (vuoto per una linea)",
     "updateIsAvailable": "Un aggiornamento è disponibile!",
     "fileActions": "Azioni file",
+    "recentlyOpened": "Aperti di recente",
+    "recentlyOpenedEmpty": "I file che apri verranno mostrati qui.",
     "customizeLinks": "Personalizza Link Barra Laterale",
     "customizeLinksDescription": "Personalizza i link mostrati nella barra. Trascina per riordinare.",
     "customizeShareLinksDescription": "Personalizza i link per questa condivisione.",
@@ -1092,7 +1094,8 @@
       "scopeAccess": "Attività di accesso",
       "eventAccessCreate": "Accedi - Crea",
       "eventAccessDelete": "Accedi - Elimina",
-      "eventFileModify": "Modifica file"
+      "eventFileModify": "Modifica file",
+      "eventFileOpen": "Apertura file"
     },
     "toolAccessDefaults": "Impostazioni predefinite per l'accesso agli strumenti",
     "toolAccessDefaultsDescription": "Configurare a quali strumenti i nuovi utenti possono accedere per impostazione predefinita",

@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "アップデートが利用可能です！",
     "fileActions": "ファイル操作",
+    "recentlyOpened": "最近開いたファイル",
+    "recentlyOpenedEmpty": "開いたファイルがここに表示されます。",
     "customizeLinks": "サイドバーリンクのカスタマイズ",
     "customizeLinksDescription": "サイドバーに表示されるリンクをカスタマイズ。ドラッグ＆ドロップで並び替えができます。",
     "currentLinks": "現在のリンク",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "アクセス状況",
       "eventAccessCreate": "アクセス 作成",
       "eventAccessDelete": "アクセス 削除",
-      "eventFileModify": "ファイルの変更"
+      "eventFileModify": "ファイルの変更",
+      "eventFileOpen": "ファイルを開く"
     },
     "toolAccessDefaults": "ツールのアクセス権のデフォルト設定",
     "toolAccessDefaultsDescription": "新規ユーザーがデフォルトで利用できるツールを設定する",

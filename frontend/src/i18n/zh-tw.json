@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "有可用的更新！",
     "fileActions": "檔案動作",
+    "recentlyOpened": "最近開啟",
+    "recentlyOpenedEmpty": "你開啟的檔案會顯示在這裡。",
     "customizeLinks": "自訂側邊欄連結",
     "customizeLinksDescription": "自訂側邊欄顯示的連結。可拖放重新排序。",
     "currentLinks": "目前連結",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "存取活動",
       "eventAccessCreate": "存取 建立",
       "eventAccessDelete": "存取 刪除",
-      "eventFileModify": "檔案修改"
+      "eventFileModify": "檔案修改",
+      "eventFileOpen": "開啟檔案"
     },
     "toolAccessDefaults": "工具存取預設值",
     "toolAccessDefaultsDescription": "設定新使用者預設可存取的工具",

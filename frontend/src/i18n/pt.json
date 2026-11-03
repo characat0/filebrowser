@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "Está disponível uma atualização!",
     "fileActions": "Acções do ficheiro",
+    "recentlyOpened": "Abertos recentemente",
+    "recentlyOpenedEmpty": "Os ficheiros que abrir aparecerão aqui.",
     "customizeLinks": "Personalizar ligações da barra lateral",
     "customizeLinksDescription": "Personalize os links apresentados na sua barra lateral. Arraste e largue para reordenar.",
     "currentLinks": "Ligações actuais",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Atividade de acesso",
       "eventAccessCreate": "Aceder à criação",
       "eventAccessDelete": "Aceder/eliminar",
-      "eventFileModify": "Modificação de ficheiro"
+      "eventFileModify": "Modificação de ficheiro",
+      "eventFileOpen": "Abertura de ficheiro"
     },
     "toolAccessDefaults": "Definições predefinidas de acesso às ferramentas",
     "toolAccessDefaultsDescription": "Configurar quais as ferramentas a que os novos utilizadores têm acesso por predefinição",

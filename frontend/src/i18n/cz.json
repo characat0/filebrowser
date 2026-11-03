@@ -497,6 +497,8 @@
   "sidebar": {
     "updateIsAvailable": "Je dostupná aktualizace!",
     "fileActions": "Akce se soubory",
+    "recentlyOpened": "Nedávno otevřené",
+    "recentlyOpenedEmpty": "Zde se zobrazí soubory, které otevřete.",
     "customizeLinks": "Přizpůsobení odkazů na bočním panelu",
     "customizeLinksDescription": "Přizpůsobení odkazů zobrazených v postranním panelu. Přetažením změníte jejich pořadí.",
     "currentLinks": "Aktuální odkazy",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Aktivita přístupu",
       "eventAccessCreate": "Vytvořit přístup",
       "eventAccessDelete": "Přístup, smazat",
-      "eventFileModify": "Úprava souboru"
+      "eventFileModify": "Úprava souboru",
+      "eventFileOpen": "Otevření souboru"
     },
     "toolAccessDefaults": "Výchozí nastavení přístupu k nástrojům",
     "toolAccessDefaultsDescription": "Nastavte, ke kterým nástrojům budou mít noví uživatelé ve výchozím nastavení přístup",

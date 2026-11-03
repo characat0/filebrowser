@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "Bir güncelleme mevcut!",
     "fileActions": "Dosya işlemleri",
+    "recentlyOpened": "Son açılanlar",
+    "recentlyOpenedEmpty": "Açtığınız dosyalar burada görünecek.",
     "customizeLinks": "Kenar Çubuğu Bağlantılarını Özelleştir",
     "customizeLinksDescription": "Kenar çubuğunuzda gösterilen bağlantıları özelleştirin. Yeniden sıralamak için sürükleyip bırakın.",
     "currentLinks": "Güncel Bağlantılar",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Erişim etkinliği",
       "eventAccessCreate": "Erişim oluştur",
       "eventAccessDelete": "Erişim silme",
-      "eventFileModify": "Dosya düzenleme"
+      "eventFileModify": "Dosya düzenleme",
+      "eventFileOpen": "Dosya açma"
     },
     "toolAccessDefaults": "Araç erişim varsayılan ayarları",
     "toolAccessDefaultsDescription": "Yeni kullanıcıların varsayılan olarak hangi araçlara erişebileceğini ayarlayın",

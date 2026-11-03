@@ -702,6 +702,8 @@
     "dividerNamePlaceholder": "Scheidingstekst (leeg laten om een lijn weer te geven)",
     "updateIsAvailable": "Er is een update beschikbaar!",
     "fileActions": "Bestandsacties",
+    "recentlyOpened": "Recent geopend",
+    "recentlyOpenedEmpty": "Bestanden die je opent, verschijnen hier.",
     "switchMode": "Schakelen tussen links en navigatiestructuur",
     "customizeLinks": "Zijbalk koppelingen aanpassen",
     "customizeLinksDescription": "Pas de koppelingen in de zijbalk aan. Gebruik slepen en neerzetten om te ordenen.",
@@ -1126,7 +1128,8 @@
       "pathGlob": "Padpatroon (glob)",
       "viewActivity": "Activiteit bekijken",
       "tableColumns": "Kolommen in de tabel",
-      "eventFileModify": "Bestand wijzigen"
+      "eventFileModify": "Bestand wijzigen",
+      "eventFileOpen": "Bestand geopend"
     },
     "toolNotFound": "Gereedschap niet gevonden"
   },

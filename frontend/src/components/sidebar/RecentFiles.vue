@@ -5,12 +5,12 @@
       <span class="sidebar-divider-text">
         <i class="material-symbols recent-files-header__icon">hourglass</i>
         {{ $t("sidebar.recentlyOpened") }}
-        <i class="material-symbols recent-files-header__icon">{{ collapsed ? "keyboard_arrow_down" : "keyboard_arrow_up" }}</i>
+        <i class="material-symbols recent-files-header__icon">{{ toggleIcon }}</i>
       </span>
     </div>
     <div v-if="!collapsed" class="inner-card">
       <a v-for="file in files" :key="`${file.source}:${file.path}`" :href="fileHref(file)"
-        :aria-label="fileName(file.path)" class="action button sidebar-link-button recent-file"
+        :aria-label="`${$t('sidebar.recentlyOpened')}: ${fileName(file.path)}`" data-testid="recent-file" class="action button sidebar-link-button recent-file"
         :class="{ active: isCurrent(file) }" @click.prevent="open(file)"
         @mouseenter="showTooltip($event, file)" @mouseleave="hideTooltip">
         <div class="link-container">
@@ -66,11 +66,14 @@ export default {
   },
   computed: {
     currentReq: () => state.req,
+    toggleIcon() {
+      return this.collapsed ? "keyboard_arrow_down" : "keyboard_arrow_up";
+    },
   },
   watch: {
     // Opening a file puts it at the top right away; the server copy catches up on the next refresh.
     currentReq(req) {
-      if (!req || !req.source || !req.path || req.type === "directory" || getters.isShare()) {
+      if (!req?.source || !req.path || req.type === "directory" || getters.isShare()) {
         return;
       }
       const opened = { source: req.source, path: req.path, openedAt: Math.floor(Date.now() / 1000) };

@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "Ein Update ist verfügbar!",
     "fileActions": "Datei-Aktionen",
+    "recentlyOpened": "Zuletzt geöffnet",
+    "recentlyOpenedEmpty": "Hier erscheinen Dateien, die du öffnest.",
     "customizeLinks": "Links in der Seitenleiste anpassen",
     "customizeLinksDescription": "Passen Sie die in Ihrer Seitenleiste angezeigten Links an. Durch Ziehen und Ablegen können Sie die Reihenfolge ändern.",
     "currentLinks": "Aktuelle Links",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Zugriffsaktivität",
       "eventAccessCreate": "Zugriff erstellen",
       "eventAccessDelete": "Zugriff löschen",
-      "eventFileModify": "Datei ändern"
+      "eventFileModify": "Datei ändern",
+      "eventFileOpen": "Datei geöffnet"
     },
     "toolAccessDefaults": "Standard-Zugriffseinstellungen für Werkzeuge",
     "toolAccessDefaultsDescription": "Legen Sie fest, auf welche Tools neue Benutzer standardmäßig zugreifen können",

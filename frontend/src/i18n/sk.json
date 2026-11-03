@@ -338,6 +338,8 @@
   "sidebar": {
     "updateIsAvailable": "K dispozícii je aktualizácia!",
     "fileActions": "Akcie so súbormi",
+    "recentlyOpened": "Nedávno otvorené",
+    "recentlyOpenedEmpty": "Tu sa zobrazia súbory, ktoré otvoríte.",
     "customizeLinks": "Prispôsobenie odkazov na bočnom paneli",
     "customizeLinksDescription": "Prispôsobenie odkazov zobrazených na bočnom paneli. Ťahaním a púšťaním môžete meniť poradie.",
     "currentLinks": "Aktuálne odkazy",
@@ -1083,7 +1085,8 @@
       "scopeAccess": "Aktivita prístupu",
       "eventAccessCreate": "Prístup k vytváraniu",
       "eventAccessDelete": "Prístup, vymazať",
-      "eventFileModify": "Úprava súboru"
+      "eventFileModify": "Úprava súboru",
+      "eventFileOpen": "Otvorenie súboru"
     },
     "toolAccessDefaults": "Predvolené nastavenia prístupu k nástrojom",
     "toolAccessDefaultsDescription": "Nastavte, ku ktorým nástrojom budú mať noví používatelia štandardne prístup",
