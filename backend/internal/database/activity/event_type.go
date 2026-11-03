@@ -12,6 +12,7 @@ const (
 	EventRename          EventType = "rename"
 	EventUpload          EventType = "upload"
 	EventFileModify      EventType = "fileModify"
+	EventFileOpen        EventType = "fileOpen"
 	EventDelete          EventType = "delete"
 	EventBulkDelete      EventType = "bulkDelete"
 	EventArchive         EventType = "archive"
@@ -46,6 +47,7 @@ var AllEventTypes = []EventType{
 	EventRename,
 	EventUpload,
 	EventFileModify,
+	EventFileOpen,
 	EventDelete,
 	EventBulkDelete,
 	EventArchive,
@@ -80,6 +82,7 @@ var FileEventTypes = []EventType{
 	EventRename,
 	EventUpload,
 	EventFileModify,
+	EventFileOpen,
 	EventDelete,
 	EventBulkDelete,
 	EventArchive,
@@ -158,7 +161,7 @@ func intersectEventTypes(requested, allowed []EventType) []EventType {
 func (e EventType) Valid() bool {
 	switch e {
 	case EventDownload, EventMove, EventCopy, EventRename,
-		EventUpload, EventFileModify, EventDelete, EventBulkDelete,
+		EventUpload, EventFileModify, EventFileOpen, EventDelete, EventBulkDelete,
 		EventArchive, EventUnarchive,
 		EventShareCreate, EventShareUpdate, EventShareDelete,
 		EventUserCreate, EventUserUpdate, EventUserDelete, EventAccessUpdate, EventAccessCreate, EventAccessDelete,

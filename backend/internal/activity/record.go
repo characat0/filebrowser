@@ -229,6 +229,19 @@ func RecordUpload(r *http.Request, actor *Actor, source, path string, isDir bool
 }
 
 // RecordFileModify appends an audit row for an in-place file content update (PUT).
+// RecordFileOpen logs a file being opened in the UI (its metadata fetched for viewing).
+func RecordFileOpen(r *http.Request, actor *Actor, source, path string) {
+	recordFileEvent(r, actor, activitydb.Entry{
+		EventType: activitydb.EventFileOpen,
+		Source:    source,
+		Path:      path,
+		Details: activitydb.Details{
+			Source: source,
+			Path:   path,
+		},
+	})
+}
+
 func RecordFileModify(r *http.Request, actor *Actor, source, path string) {
 	entry := activitydb.Entry{
 		EventType: activitydb.EventFileModify,

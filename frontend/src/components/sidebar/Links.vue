@@ -128,6 +128,7 @@
             </a>
           </template>
         </transition-group>
+        <SidebarRecentFiles v-if="showRecentFiles" />
       </template>
       <!-- Navigation Mode -->
       <template v-else>
@@ -179,6 +180,7 @@ import ShareInfo from "@/components/files/ShareInfo.vue";
 import FileTree from '@/components/files/FileTree.vue';
 import ExpandDropdown from "@/components/settings/ExpandDropdown.vue";
 import ToggleSwitch from "@/components/settings/ToggleSwitch.vue";
+import SidebarRecentFiles from "./RecentFiles.vue";
 export default {
   name: "SidebarLinks",
   components: {
@@ -188,6 +190,7 @@ export default {
     FileTree,
     ExpandDropdown,
     ToggleSwitch,
+    SidebarRecentFiles,
   },
   data() {
     return {
@@ -203,6 +206,9 @@ export default {
     },
     canEdit() {
       return state.shareInfo?.canEditShare || false;
+    },
+    showRecentFiles() {
+      return !this.isShare && getters.isLoggedIn() && state.user?.username !== "anonymous";
     },
     isLoggedIn() {
       return getters.isLoggedIn();

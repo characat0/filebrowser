@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/gtsteffaniak/filebrowser/backend/internal/activity"
 	activitydb "github.com/gtsteffaniak/filebrowser/backend/internal/database/activity"
@@ -128,4 +129,45 @@ func mustJSON(v any) []byte {
 		return []byte("{}")
 	}
 	return b
+}
+
+// recentFile is one entry of the recently opened files list.
+type recentFile struct {
+	Source   string `json:"source"`
+	Path     string `json:"path"`
+	OpenedAt int64  `json:"openedAt"`
+}
+
+// recentFilesHandler returns the files the current user opened most recently
+// (from fileOpen activity), newest first, one entry per file. The optional
+// limit query parameter defaults to 15 and is capped at 50.
+func recentFilesHandler(w http.ResponseWriter, r *http.Request, d *Context) (int, error) {
+	limit := 15
+	if v, err := strconv.Atoi(r.URL.Query().Get("limit")); err == nil {
+		limit = utils.Clamp(v, 1, 50)
+	}
+	items, _, err := state.ListActivity(activitydb.QueryFilter{
+		UserID:     d.User.ID,
+		UserFilter: true,
+		EventTypes: []activitydb.EventType{activitydb.EventFileOpen},
+		Page:       1,
+		Limit:      500,
+	})
+	if err != nil {
+		return http.StatusInternalServerError, err
+	}
+	seen := make(map[string]struct{}, limit)
+	out := make([]recentFile, 0, limit)
+	for _, item := range items {
+		key := item.Source + "\x00" + item.Path
+		if _, ok := seen[key]; ok {
+			continue
+		}
+		seen[key] = struct{}{}
+		out = append(out, recentFile{Source: item.Source, Path: item.Path, OpenedAt: item.CreatedAt})
+		if len(out) == limit {
+			break
+		}
+	}
+	return RenderJSON(w, r, out)
 }

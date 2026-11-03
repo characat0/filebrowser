@@ -377,6 +377,7 @@ const FILE_EVENT_TYPES = [
   "rename",
   "upload",
   "fileModify",
+  "fileOpen",
   "delete",
   "bulkDelete",
   "archive",

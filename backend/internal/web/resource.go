@@ -195,6 +195,11 @@ func resourceGetHandler(w http.ResponseWriter, r *http.Request, d *Context) (int
 		fileInfo.Checksums = make(map[string]string)
 		fileInfo.Checksums[algo] = checksum
 	}
+	// Opening a file fetches its metadata first; follow-up content, metadata and
+	// checksum requests for the same file are not separate opens.
+	if !getContent && !getMetadata && r.URL.Query().Get("checksum") == "" {
+		activity.RecordFileOpen(r, toActor(d), source, path)
+	}
 	AttachViewToken(d, source, fileInfo)
 	return RenderJSON(w, r, fileInfo)
 }
