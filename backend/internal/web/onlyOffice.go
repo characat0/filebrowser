@@ -14,6 +14,7 @@ import (
 	"time"
 
 	jwt "github.com/golang-jwt/jwt/v4"
+	"github.com/gtsteffaniak/filebrowser/backend/internal/activity"
 	"github.com/gtsteffaniak/filebrowser/backend/internal/adapters/fs/files"
 	"github.com/gtsteffaniak/filebrowser/backend/internal/database/users"
 	"github.com/gtsteffaniak/filebrowser/backend/internal/utils"
@@ -731,6 +732,7 @@ func processOnlyOfficeCallback(w http.ResponseWriter, r *http.Request, d *Contex
 
 		logger.Infof("OnlyOffice callback: successfully saved document to path=%s",
 			path)
+		activity.RecordFileModify(r, toActor(d), source, path)
 
 		// Send success log event with detailed path information
 		if logContext := GetOnlyOfficeLogContext(data.Key); logContext != nil {
